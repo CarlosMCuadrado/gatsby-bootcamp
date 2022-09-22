@@ -1,0 +1,14 @@
+@import "../styles/_reset";
+
+.footer {
+    padding: 3rem 0 1rem;
+    font-family: monospace;
+}
+
+.nav-item {
+    text-decoration: none;
+}
+
+.nav-item:hover {
+    color: yellowgreen;
+}
