@@ -1,6 +1,9 @@
 
 module.exports = {
-  /* Your site config here */
+  siteMetadata: {
+    title: 'Full Gatsby Bootcamp',
+    author: 'Carlos Cuadrado'
+  },
   plugins: [
     'gatsby-plugin-sass'
   ],
