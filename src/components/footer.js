@@ -10,6 +10,7 @@ const Footer = () => {
             siteMetadata {
                 title
                 author
+                description
             }
         }
     }
@@ -19,6 +20,7 @@ const Footer = () => {
     return (
         <footer className={footerStyles.footer}>
             <p>{data.site.siteMetadata.title} created by <Link className={footerStyles.navItem} to='/'>{data.site.siteMetadata.author}</Link>, © 2022</p>
+            <p>{data.site.siteMetadata.description}</p>
         </footer>
     )
 }

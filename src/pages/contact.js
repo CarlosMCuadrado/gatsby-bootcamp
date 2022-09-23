@@ -7,7 +7,7 @@ const ContactPage = () => {
         <Layout>
             <h2>Contact</h2>
             <p>Contact details here</p>
-            <p>And you could reach me on <a href="#">Instagram</a></p>
+            <p>And you could reach me on <a href="https://soundcloud.com/carlos-cuadrado-00" rel="noopener noreferer" target="_blank">SoundCloud</a></p>
         </Layout>
     )
 }
