@@ -3,6 +3,8 @@
 .footer {
     padding: 3rem 0 1rem;
     font-family: monospace;
+    display: flex;
+    justify-content: space-between;
 }
 
 .nav-item {
