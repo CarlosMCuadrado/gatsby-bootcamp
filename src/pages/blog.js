@@ -11,6 +11,62 @@ import * as blogStyles from './blog.module.scss'
 
 export const query = graphql`
 query {
+  allContentfulBlogPost (
+    sort: {
+      fields: publishedDate,
+      order: DESC
+    }
+  ) {
+    edges {
+      node {
+        title
+        slug
+        publishedDate (
+          fromNow: true
+        )
+      }
+    }
+  }
+}
+`
+
+const BlogPage = ({ data }) => {
+
+    console.log(data)
+
+    return (
+        <Layout>
+            <h2>Blog</h2>
+            <ol className={blogStyles.posts}>
+            {
+                data.allContentfulBlogPost.edges.map(
+                    ({node})=>
+                      <li className={blogStyles.post}>
+                        <Link to = {node.slug}>
+                          <h3>{node.title}</h3>
+                          <p>{node.publishedDate}</p>
+                        </Link>
+                      </li>
+                )
+            }
+            </ol>
+        </Layout>
+    )
+}
+
+
+
+export default BlogPage
+
+
+//
+// Changelog:
+// 1.1: Markdown code version documented below
+// 2.1: Conteful code version up and running
+//
+//
+/*export const query = graphql`
+query {
     allMarkdownRemark {
       edges {
         node {
@@ -42,16 +98,16 @@ const BlogPage = ({ data }) => {
                         <Link to = {node.fields.slug}>
                           <h3>{node.frontmatter.title}</h3>
                           <p>{node.frontmatter.date}</p>
-                          {/* <Link to = {node.fields.slug}>{node.fields.slug}</Link> // Así está comentado: encerrado entre dos llaves */}
-                        </Link>
-                      </li>
-                )
-            }
-            </ol>
-        </Layout>
-    )
-}
-
-
-
-export default BlogPage
+                          </Link>
+                          </li>
+                    )
+                }
+                </ol>
+            </Layout>
+        )
+    }
+    
+    
+    
+    export default BlogPage
+*/
