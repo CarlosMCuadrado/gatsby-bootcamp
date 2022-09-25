@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import {renderRichText} from 'gatsby-source-contentful/rich-text'
 
 import Layout from '../components/layout'
+import Head from '../components/head'
 
 //
 //
@@ -70,6 +71,7 @@ const Blog = ({ data }) => {
 
   return (
     <Layout>
+      <Head title={data.contentfulBlogPost.title}/>
       <h1>{data.contentfulBlogPost.title}</h1>
       <p>{data.contentfulBlogPost.publishedDate}</p>
       {data.contentfulBlogPost.body &&

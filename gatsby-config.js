@@ -6,6 +6,7 @@ module.exports = {
     description: 'Silence is gold'
   },
   plugins: [
+    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-contentful',
       options: {
